@@ -1,8 +1,29 @@
-﻿var intArray : array[1..10] of integer; 
-i, n : integer; 
-begin 
-writeln('Введите 10 целых чисел: '); 
-for i := 1 to 10 do readLn(intArray[i]); 
-if intArray[1] > intArray[2] then write('Массив не является упорядоченным по возрастанию.') 
-else write('Массив упорядочен по возрастанию.'); 
+﻿var
+a: array[1..10] of Integer;
+i: Integer;
+ord: Boolean;
+begin
+// Заполняем массив
+for i := 1 to 10 do
+begin
+Write('Введите элемент массива a[', i, ']: ');
+Read(a[i]);
+end;
+
+// Проверяем упорядоченность массива
+ord := True;
+for i := 2 to 10 do
+begin
+if a[i] < a[i-1] then
+begin
+ord := False;
+Break;
+end;
+end;
+
+// Выводим результат
+if ord=true then
+WriteLn('Массив упорядочен по возрастанию.')
+else
+WriteLn('Массив не упорядочен по возрастанию.');
 end.

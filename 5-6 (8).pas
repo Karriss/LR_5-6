@@ -3,14 +3,11 @@ var
     a: array[1..N] of byte;
     i, k, num, f , max: byte;
 begin
-    randomize;
     for i:=1 to N do begin
         a[i] := random(20);
         write(a[i],' ');
     end;
     writeln;
-
-    num := a[1];
     max := 1;
     for i:=1 to N-1 do begin
         f := 1;
